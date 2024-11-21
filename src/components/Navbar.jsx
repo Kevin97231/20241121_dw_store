@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { HeaderItem } from "./HeaderItem";
 
 export const Navbar = () => {
   const logoPath = "/src/assets/images/logo.png";
@@ -13,7 +14,10 @@ export const Navbar = () => {
         <div className="m-auto w-fit">
           <ul className="flex items-center gap-10">
             <li>
-              <Link to={"/products"}>Nos produits</Link>
+              <HeaderItem href="/">Accueil</HeaderItem>
+            </li>
+            <li>
+              <HeaderItem href="/products">Nos produits</HeaderItem>
             </li>
           </ul>
         </div>
