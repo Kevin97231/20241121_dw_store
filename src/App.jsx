@@ -1,5 +1,6 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import "./App.css";
+import { Navbar } from "./components/Navbar";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,11 +22,13 @@ function App() {
 
   function Root() {
     return (
-      <>
-        <div className="m-20 bg-black">NAVBAR</div>
-        <Outlet />
-        <div>FOOTER</div>
-      </>
+      <div className="root-container">
+        <Navbar />
+        <div className="outlet">
+          <Outlet />
+        </div>
+        <p>FOOTER</p>
+      </div>
     );
   }
 
