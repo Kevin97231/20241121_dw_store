@@ -10,20 +10,31 @@ export const Products = () => {
 
   const { getPaginate, setPage, setPerPage, page, perPage } = useAxios();
 
+  const [responseObject, setResponseObject] = useState({ pages: 0, items: 0 });
+
   useEffect(() => {
     getPaginate()
       .then((response) => {
+        console.log(response);
+        setResponseObject({ pages: response.pages, items: response.items });
         setProducts(response.data);
       })
       .catch((e) => console.error(e.message));
   }, [page, perPage]);
+
+  const clickOnPaginationButton = (number) => {
+    setPage(number);
+  };
 
   return (
     <div className="w-full">
       <Titre>Mes produits</Titre>
       <ProductList products={products} />
       <div className="m-auto my-5 w-fit">
-        <Pagination nbrButton={5} />
+        <Pagination
+          nbrButton={responseObject.pages}
+          clickOnPaginationButton={clickOnPaginationButton}
+        />
       </div>
     </div>
   );

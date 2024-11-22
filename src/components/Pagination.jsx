@@ -1,6 +1,6 @@
 import { PaginationButton } from "./PaginationButton";
 
-export const Pagination = ({ nbrButton }) => {
+export const Pagination = ({ nbrButton, clickOnPaginationButton }) => {
   const numbers = Array.from({ length: nbrButton }, (_, index) => index + 1);
 
   //   nbrButon = 4
@@ -10,7 +10,11 @@ export const Pagination = ({ nbrButton }) => {
     <>
       <div className="bg-white join">
         {numbers.map((number) => (
-          <PaginationButton key={number} number={number} />
+          <PaginationButton
+            key={number}
+            number={number}
+            clickOnPaginationButton={clickOnPaginationButton}
+          />
         ))}
       </div>
     </>

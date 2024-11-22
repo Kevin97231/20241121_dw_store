@@ -3,6 +3,10 @@ import "./App.css";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Products } from "./view/Products";
+import { CounterRedux } from "./view/CounterRedux";
+import { ProductDetail } from "./view/ProductDetail";
+import { Notfound } from "./view/Notfound";
+import { Cart } from "./view/Cart";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,6 +21,22 @@ function App() {
         {
           path: "/products",
           element: <Products />,
+        },
+        {
+          path: "/compteur-redux",
+          element: <CounterRedux />,
+        },
+        {
+          path: "/products/:id",
+          element: <ProductDetail />,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
+        {
+          path: "*",
+          element: <Notfound />,
         },
       ],
     },

@@ -42,6 +42,8 @@ export const useAxios = () => {
   const getPaginate = () =>
     handleRequest(api.get, `?_page=${page}&_per_page=${perPage}`);
 
+  const getById = (id) => handleRequest(api.get, `/${id}`);
+
   return {
     get,
     post,
@@ -52,5 +54,8 @@ export const useAxios = () => {
     getPaginate,
     setPage,
     setPerPage,
+    page,
+    perPage,
+    getById,
   };
 };

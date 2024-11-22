@@ -1,3 +1,10 @@
-export const PaginationButton = ({ number }) => {
-  return <button className="join-item btn btn-lg">{number}</button>;
+export const PaginationButton = ({ number, clickOnPaginationButton }) => {
+  return (
+    <button
+      className="join-item btn btn-lg"
+      onClick={() => clickOnPaginationButton(number)}
+    >
+      {number}
+    </button>
+  );
 };
