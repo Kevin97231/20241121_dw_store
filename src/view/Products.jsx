@@ -19,9 +19,9 @@ export const Products = () => {
   }, []);
 
   return (
-    <>
+    <div className="w-full">
       <Titre>Mes produits</Titre>
       <ProductList products={products} />
-    </>
+    </div>
   );
 };

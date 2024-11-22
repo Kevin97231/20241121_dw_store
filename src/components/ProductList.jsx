@@ -1,7 +1,9 @@
+import { ProductCard } from "./ProductCard";
+
 export const ProductList = ({ products }) => {
   return (
     <>
-      <div className="grid w-full gap-4 grids-cols-4">
+      <div className="grid w-full grid-cols-4 gap-4">
         {products.map((product) => (
           <ProductCard product={product} />
         ))}
